@@ -11,15 +11,12 @@ def PDF_to_PNG(file_path):
         os.makedirs(page_path)
     if not os.path.exists(image_path):
         os.makedirs(image_path)
-    print("폴더 생성 완료")
+    print("Output Folder Created")
 
     Pages_to_PNG(file_path, page_path)
     PDF_Image_Extract(file_path, image_path)
-    print(f"{page_path}에 저장 완료")
+    print(f"Saved in {page_path}")
     
-
-    
-
 # 페이지 전체 추출
 def Pages_to_PNG(file_path, output_path):
     docs = fitz.open(file_path)
@@ -27,7 +24,7 @@ def Pages_to_PNG(file_path, output_path):
         pix = page.get_pixmap(matrix=fitz.Matrix(4, 4))     # 4배 해상도
         output = os.path.join(output_path, "p_%i.png" % page.number)
         pix.save(output)
-    print("페이지 저장 완료")
+    print("All Pages Saved")
 
 # 모든 이미지 추출
 def PDF_Image_Extract(file_path, output_path):
@@ -46,7 +43,7 @@ def PDF_Image_Extract(file_path, output_path):
             with open(full_path, "wb") as image_file:
                 image_file.write(image_bytes)
 
-    print("이미지 추출 완료")
+    print("All Image Extracted")
     docs.close()
 
 if __name__ == "__main__":
