@@ -1,5 +1,5 @@
 # pdf_to_png — PDF의 각 페이지를 고화질 PNG로 저장하고, PDF에 들어 있는 원본 이미지를 추출한다.
-# 사용법과 규칙은 README.md에 있다.
+# 사용법과 참고 사항은 README.md에 있다.
 
 import os
 import sys
@@ -33,7 +33,7 @@ PDF의 각 페이지를 고화질 PNG로 저장하고, PDF에 들어 있는 원�
 결과는 PDF와 같은 폴더의 <PDF 이름> 폴더에 저장됩니다.
 
 옵션:
-  -h, --help      도움말 보기
+  -h, --help      사용법 출력
 
 예:
   {name} ~/Documents/report.pdf""", file=out)
